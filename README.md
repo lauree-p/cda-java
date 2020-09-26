@@ -9,14 +9,14 @@ Les bases de la programmation sont commune à tous les langages. Java est format
 >#### [TP1 : Premieres classes](https://github.com/lauree-p/cda-java/tree/master/TP/src/TP1)
 > Objectif : Utiliser des variables de type élémentaire, de type Date et Scanner.
 
->#### [TP2 : Les types de variables](https://github.com/lauree-p/cda-java/tree/master/TP/src/TP1)
+>#### [TP2 : Les types de variables](https://github.com/lauree-p/cda-java/tree/master/TP/src/TP2)
 >  Objectif : Comprendre les types élémentaires.
 
 ### Structures de controle
 Les structures de contrôle sont l'ensemble d'instruction qui permettent de dévier le flot de contrôle du programme la contenant lorsqu'elle est exécutée. Par exemple : Si, Tant que ...
 
->#### [TP3 : Les conditions](https://github.com/lauree-p/cda-java/tree/master/TP/src/TP1)
+>#### [TP3 : Les conditions](https://github.com/lauree-p/cda-java/tree/master/TP/src/TP3)
 > Objectif : Comprendre les instructions conditionnelles
 
->#### [TP4 : Les boucles](https://github.com/lauree-p/cda-java/tree/master/TP/src/TP1)
+>#### [TP4 : Les boucles](https://github.com/lauree-p/cda-java/tree/master/TP/src/TP4)
 > Objectif : Comprendre Les instructions répétitives ou traitements itératifs.
