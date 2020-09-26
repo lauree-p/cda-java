@@ -1,5 +1,5 @@
 # CDA-Java 
-![coursJava](https://school.needemand.com/school/pluginfile.php/1836/format_remuiformat/remuicourseimage_filearea/772834067/coursJava.png?forcedownload=1)
+![coursJava](assets/coursjava.png)
 https://school.needemand.com/school/course/view.php?id=107
 
 ## Programmation Objet
