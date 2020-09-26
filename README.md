@@ -1,5 +1,5 @@
 # CDA-Java 
-![coursJava](assets/coursjava.png)
+![coursJava](https://raw.githubusercontent.com/lauree-p/cda-java/master/assets/coursJava.png)
 https://school.needemand.com/school/course/view.php?id=107
 
 ## Programmation Objet
