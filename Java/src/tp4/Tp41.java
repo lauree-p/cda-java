@@ -1,6 +1,6 @@
 package tp4;
 
-public class tp41 {
+public class Tp41 {
 
 	public static void main(String[] args) {
 		
