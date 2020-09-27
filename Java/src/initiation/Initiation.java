@@ -1,4 +1,4 @@
-package initialisation;
+package initiation;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -9,7 +9,7 @@ import java.util.Date;
 
 //------------ Première classe ------------
 
-public class Initialisation {
+public class Initiation {
 
     /**
     * @param args commentaire sur les arguments
@@ -20,23 +20,23 @@ public class Initialisation {
 		
 		// 1------------ Exécution ------------
 		
-		// Pour constater une exécution, nous avons besoin d'un affichage.
+		// Pour constater une exe�?cution, nous avons besoin d'un affichage.
 		
 		System.out.print("Hello World");
 		
 		/**
 		 * System est une classe de java qui appartient au package java.lang. 
-		 * Il est installé par défault, vous n'avez pas à l'importer.
-		 * Out est une méthode de la classe System. 
-		 * Elle est appelée en précisant le nom de la classe devant le nom de la méthode, séparé par un point. 
+		 * Il est installe�? par de�?fault, vous n'avez pas à l'importer.
+		 * Out est une me�?thode de la classe System. 
+		 * Elle est appele�?e en pre�?cisant le nom de la classe devant le nom de la me�?thode, se�?pare�? par un point. 
 		 * Ça signifie qu'on va sortir du système. 
-		 * Print est une méthode qui affiche dans la console son paramètre. 
+		 * Print est une me�?thode qui affiche dans la console son paramètre. 
 		 */
 		
 		// 2------------ Affichez du texte ------------
 		
 		/**
-		 * TODO Essayez les différentes mise en forme sur votre texte : print permet d'afficher.
+		 * TODO Essayez les diffe�?rentes mise en forme sur votre texte : print permet d'afficher.
 		 * println permet d'afficher et d'aller à la ligne.
 		 */
 		
@@ -53,7 +53,7 @@ public class Initialisation {
 		System.out.println("Hello World,\t nous sommes le 22/08/2020 ");
 		
 		/**
-		 * TODO Essayez ces différentes déclarations variables :
+		 * TODO Essayez ces diffe�?rentes de�?clarations variables :
 		 */
 		
 		System.out.print("Hello World"); System.out.print("Aujourd'hui, nous sommes le 22 aout 2020");
@@ -78,11 +78,11 @@ public class Initialisation {
 		String phrase4 = new String("Hello World");
 		
 		/**
-		 * String est une classe de java implémentée par défaut. Elle permet de manipuler des chaîne de caractère.
-		 * new est un constructeur d'objet il permet d'instancier un objet de la classe indiquée, ici String.
+		 * String est une classe de java imple�?mente�?e par de�?faut. Elle permet de manipuler des chaîne de caractère.
+		 * new est un constructeur d'objet il permet d'instancier un objet de la classe indique�?e, ici String.
 		 */
 		
-		// Essayez la concaténation.
+		// Essayez la concate�?nation.
 		
 		int jour = 22;
 		String mois = "Août";
@@ -109,12 +109,12 @@ public class Initialisation {
 	
 	// 3------------ Premiere méthodes ------------
 	
-	// ! Attention de bien définir la méthode en dehors de la méthode principale mais à l’intérieur de la classe.
+	// ! Attention de bien de�?finir la me�?thode en dehors de la me�?thode principale mais à l’inte�?rieur de la classe.
 	
 	/**
 	 * s est notre paramètre. Il est de type String.
-	 * Vous devez le précisez lors de la définition de la méthode.
-	 * D'ailleurs, la méthode n'acceptera rien d'autre en paramètre et provoquera une erreur.
+	 * Vous devez le pre�?cisez lors de la de�?finition de la me�?thode.
+	 * D'ailleurs, la me�?thode n'acceptera rien d'autre en paramètre et provoquera une erreur.
 	 * void indique que la fonction ne retourne rien.
 	 * 
 	 * Dit hello à une personne
@@ -127,8 +127,8 @@ public class Initialisation {
 	/*
 	 * TODO : Créer la fonction « bonjour » pour qu'elle retourne du texte.
 	 * 
-	 * void est remplacé par le type qui est retourné.
-	 * Ici : String. Le mot-clef return sort de la méthode est retourne ce qui lui succède.
+	 * void est remplace�? par le type qui est retourne�?.
+	 * Ici : String. Le mot-clef return sort de la me�?thode est retourne ce qui lui succède.
 	 * 
 	 * Résultat attendu : Lorsque vous exécutez cela dans le main :
 	 * System.out.println (bonjour("Bob"));
@@ -154,19 +154,19 @@ public class Initialisation {
 	/**
 	 * Pour que le code reste clair, il est nécessaire de le commenter. 
 	 * 
-	 * Commencez à tapez /** au dessus de la méthode, puis entrer. Cela génère automatiquement le commentaire.
+	 * Commencez à tapez /** au dessus de la me�?thode, puis entrer. Cela ge�?nère automatiquement le commentaire.
 	 * 
-	 * Pour voir le commentaire d'une méthode il suffit de laisser le pointeur sur le nom de la méthode 
-	 * tout en maintenant le bouton Ctrl enfoncé.
+	 * Pour voir le commentaire d'une me�?thode il suffit de laisser le pointeur sur le nom de la me�?thode 
+	 * tout en maintenant le bouton Ctrl enfonce�?.
 	 * 
-	 * Vérifiez l'affichage de vos commentaire. En survolant, l'appel de vos méthodes
+	 * Ve�?rifiez l'affichage de vos commentaire. En survolant, l'appel de vos me�?thodes
 	 */
 	
 	// 5------------ Importation de bibliothèque ------------
 	
 	/**
 	 * Certain objet comme les dates par exemple, nécessite l'importation d'une bibliothèque.
-	 * TODO Juste après package, avant la définition de la classe. Faites appel à l'importation.
+	 * TODO Juste après package, avant la de�?finition de la classe. Faites appel à l'importation.
 	 * 
 	 * package initiation;
 	 * import java.util.Date;
@@ -188,18 +188,18 @@ public class Initialisation {
 	 * 
 	 * 	    long time = maDate.getTime();
 	 * 
-	 * Cette méthode retourne le nombre de millisecondes depuis 01/01/1970.
-	 * La gestion de date et d’heure a longtemps été la bête noire des développeurs Java.
+	 * Cette me�?thode retourne le nombre de millisecondes depuis 01/01/1970.
+	 * La gestion de date et d’heure a longtemps e�?te�? la bête noire des de�?veloppeurs Java.
 	 * Il est vrai que le problème est complexe. Travailler en base 60 pour les secondes et les minutes puis en base 24
 	 * pour les heures n’est pas très simple.
 	 * 
 	 * Mais la palme revient à la gestion des mois qui n’ont pas tous le même nombre de jours, voir pire puisque certains
-	 * mois ont un nombre de jours variable suivant les années. Les ordinateurs utilisent une technique différente, 
+	 * mois ont un nombre de jours variable suivant les anne�?es. Les ordinateurs utilisent une technique diffe�?rente, 
 	 * en ne travaillant pas directement avec des dates et heures mais en nombre de secondes ou de millisecondes 
-	 * depuis une date de référence (généralement le 1er janvier 1970 à 0 heure).
+	 * depuis une date de re�?fe�?rence (ge�?ne�?ralement le 1er janvier 1970 à 0 heure).
 	 * 
-	 * Ce mode de représentation n’est cependant pas très pratique pour un humain.
-	 * La valeur 1597753879831 n’est pas très évocatrice, par contre 22/8/2020 est beaucoup plus parlant. 
+	 * Ce mode de repre�?sentation n’est cependant pas très pratique pour un humain.
+	 * La valeur 1597753879831 n’est pas très e�?vocatrice, par contre 22/8/2020 est beaucoup plus parlant. 
 	 * C’est pourquoi de nombreuses fonctions permettent le passage d’un format à l’autre.
 	 *
 	 */
@@ -212,7 +212,7 @@ public class Initialisation {
 	 * 5.2 Utilisez la méthode getClass qui donne la nature de l'objet Date, puis l'afficher. Trouver le moyen de faire
 	 * la même chose avec votre variable time.
 	 * 
-	 * Il n'est pas nécessaire de connaître tous les noms des classes utilisées. 
+	 * Il n'est pas ne�?cessaire de connaître tous les noms des classes utilise�?es. 
 	 * Il faut savoir importer des classes, selon votre besoin.
 	 * 
 	 * 5.3 Créer la fonction afficheDate(Date uneDate) qui affichera une date donnée en paramétre au format "dd MM yyyy".

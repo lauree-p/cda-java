@@ -1,6 +1,6 @@
-package TP1;
+package tp2;
 
-public class tp26 {
+public class Tp26 {
 
 	public static void main(String[] args) {
 		char code = 'Z';

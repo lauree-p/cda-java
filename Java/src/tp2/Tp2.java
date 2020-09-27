@@ -1,6 +1,6 @@
-package TP2;
+package tp2;
 
-public class TP2 {
+public class Tp2 {
 	
 
 	

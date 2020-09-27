@@ -1,4 +1,4 @@
-package TP1;
+package tp1;
 
 import java.util.Date;
 import java.text.ParseException;
@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author LAU.POUSSIN
  */
 
-public class TP1 {
+public class Tp1 {
 
 	public static void main(String[] args) {
 		

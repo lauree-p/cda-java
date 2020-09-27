@@ -1,6 +1,6 @@
-package TP1;
+package tp2;
 
-public abstract class tp25 {
+public abstract class Tp25 {
 
 	public static void main(String[] args) {
 		int n;

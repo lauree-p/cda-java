@@ -1,6 +1,6 @@
-package TP1;
+package tp2;
 
-public class tp28 {
+public class Tp28 {
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package TP3;
+package tp3;
 
-public class tp32 {
+public class Tp32 {
 
 	public static void main(String[] args) {
 

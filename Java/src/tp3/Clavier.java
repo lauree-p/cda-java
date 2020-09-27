@@ -1,4 +1,4 @@
-package TP3;
+package tp3;
 
 import java.io.BufferedReader;
 import java.io.IOException;

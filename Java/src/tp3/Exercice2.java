@@ -1,6 +1,6 @@
-package TP3;
+package tp3;
 
-public class exercice2 {
+public class Exercice2 {
 
 	public static void main(String[] args) {
 		//algo1();

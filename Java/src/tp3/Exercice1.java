@@ -1,6 +1,6 @@
-package TP3;
+package tp3;
 
-public class exercice1 {
+public class Exercice1 {
 	
 	/**
 	 * Algo : RESULTAT 

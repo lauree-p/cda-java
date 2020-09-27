@@ -1,11 +1,11 @@
-package TP3;
+package tp3;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
-public class maClassDate {
+public class DateCustom {
 	
 	/**
 	 * 

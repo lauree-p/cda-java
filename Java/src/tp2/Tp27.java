@@ -1,6 +1,6 @@
-package TP1;
+package tp2;
 
-public class tp27 {
+public class Tp27 {
 
 	public static void main(String[] args) {
 		int n1 = 0;
