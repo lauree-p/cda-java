@@ -1,5 +1,6 @@
 package tp4;
 
+import tp3.Clavier;
 
 /**
  * 
@@ -14,8 +15,22 @@ package tp4;
 public class Exercice2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
+		int som = 0;
+		int i = 0;
+		int n;
+		int moy;
+		int nbNotes = 4;
+		
+        do {
+        	System.out.println("Entrer une note");
+            n = Clavier.lireInt();
+            som += n;
+        	i++;
+        } while ( i < nbNotes);
+        System.out.println("Somme = " + som);
+        moy = som/4;
+        System.out.println("La moyenne est de : " + moy);
 	}
 
 }

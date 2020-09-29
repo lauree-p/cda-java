@@ -13,12 +13,39 @@ public class Exercice1 {
             som += n;
         }
         System.out.println("Somme = " + som);
+        
+        som = 0;
+        i=0;
+        
+        while (i < 4) {
+        	System.out.println(i+"-Donnez un entier");
+            n = Clavier.lireInt();
+            som += n;
+        	i++;
+        }
+        System.out.println("Somme = " + som);
 
+        som = 0;
+        i=0;
+        
+        do {
+        	System.out.println(i+"-Donnez un entier");
+            n = Clavier.lireInt();
+            som += n;
+        	i++;
+        } while ( i < 4);
+        System.out.println("Somme = " + som);
+        
 	}
 	
 	/**
 	 * Ecrire ce programme, puis un autre réalisant la même chose en employant une instruction while,
 	 * et enfin un autre en utilisant une instruction do ... while.
 	 */
+	
+	
 
+	
+	
+	
 }
