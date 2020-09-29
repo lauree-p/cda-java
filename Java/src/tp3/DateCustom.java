@@ -39,68 +39,6 @@ public class DateCustom {
 		
 	}
 	
-	/**
-	 *  Permet de saisir une date
-	 * @throws ParseException 
-	 */
-	public static void saisirDate(String jour, String mois, String annee) {
-		
-		int iJour = Integer.parseInt(jour);
-		int iMois = Integer.parseInt(mois);
-		int iAnnee = Integer.parseInt(annee);
-		
-		
-		
-		// Si l'année >= 1900 && l'année =< 2100
-			// Si le mois est inférieur ou egale à 12
-				// Si le jour est inférieur ou egale a 31
-					// Si le jour est egale a 31 et le mois est different de 1, 3, 5, 7, 9 ou 11
-						// Erreur
-					// Si le mois est egale à 2
-						// Si le jour est superieur à 29
-							// Erreur
-						// Si le jour est egale à 29 est que l'année n'est pas divisible par 4 et non divisible par 100 ou si l'annee est divisible par 400 
-							// Erreur
-				// Sinon 
-					// Erreur
-			// Sinon
-				// Erreur
-		// Sinon
-			// Erreur
-		
-		if ((iAnnee > 1900) && (iAnnee < 2100)) {
-			if (iMois <= 12) {
-				if (iJour == 31 || iMois == 2) {
-					if ((iMois != 1) || (iMois != 3) || (iMois != 5) || (iMois != 7) || (iMois != 9) || (iMois != 11)){
-						System.out.println("ERROR : Le jour est egale a 31 et le mois est different de 1, 3, 5, 7, 9 ou 11");
-					}
-					if (iMois == 2) {
-						if (iJour > 29) {
-							System.out.println("ERROR : Février n'a pas de jour > à 29");
-						}
-						if ((iJour == 29) && (((iAnnee % 4) != 0) && ((iAnnee % 100) != 0)) || ((iAnnee % 400) == 0)) {
-							System.out.println("ERROR");
-						}
-					}
-				}
-			} 
-			else {System.out.println("ERROR : Il n'y a pas de mois supérieur à 12");}
-		} else {System.out.println("ERROR : Votre année est périmée");}
-		
-		
-	    String sDate= jour + "/" + mois + "/" +annee;   
-	    SimpleDateFormat formate = new SimpleDateFormat("dd/MM/yyyy");
-		try {
-			Date date = formate.parse(sDate);
-		    System.out.println(date);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	//-------------------------------------
-	
 	public static String scanJour() {
 		System.out.println("Saisissez un jour");
 		String jour = Clavier.lireString();
@@ -118,5 +56,67 @@ public class DateCustom {
 		String annee = Clavier.lireString();
 		return annee;
 	}
+	
+	/**
+	 *  Permet de saisir une date
+	 * @throws ParseException 
+	 */
+	public static void saisirDate(String jour, String mois, String annee) {
+		int iJour = Integer.parseInt(jour);
+		int iMois = Integer.parseInt(mois);
+		int iAnnee = Integer.parseInt(annee);
+		boolean verif = true;
+
+		if ((iAnnee < 1970) || (iAnnee < 2100)) {
+		} else {
+			System.out.println("Erreur année trop petite ou trop grande");
+			verif = false;
+		}
+		if ((iJour > 0 && iJour < 32)) {
+			if ((iJour == 31) && ((iMois != 1) || (iMois !=3) || (iMois != 5) || (iMois != 7) || (iMois != 7) || (iMois != 7)) ) {
+				System.out.println("Erreur pas de jour 31 dans ce mois");
+				verif = false;
+			}
+		} else {
+			verif = false;
+			System.out.println("Erreur jour > 31 ou plus petit que 1");
+		}
+			
+		if ((iMois < 12) && (iMois > 0)) {
+			if ((iMois == 2) && (iJour <= 29)) {
+				if (iJour == 29) {
+					if ((((iAnnee % 4) == 0) && ((iAnnee % 100) != 0)) || ((iAnnee % 400) == 0)) {
+						System.out.println("Année bisexetille");
+					} else {
+						System.out.println("Année non Bisexetille");
+						verif = false;
+					}
+				}
+			}
+			
+		} else {
+			verif = false;
+			System.out.println("Erreur : mois > 12 ou mois< 0");
+		}
+		
+		
+		if (verif) {
+			System.out.println("La date est bonne ! ");
+			String sDate= jour + "/" + mois + "/" +annee;
+		    SimpleDateFormat formate = new SimpleDateFormat("dd/MM/yyyy");
+			try {
+				Date date = formate.parse(sDate);
+			    System.out.println(date);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println("Erreur dans la date");
+		}
+	    
+	}
+	
+
 
 }
