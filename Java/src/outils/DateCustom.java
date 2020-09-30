@@ -117,6 +117,14 @@ public class DateCustom {
 	    
 	}
 	
+	public static boolean bisextileOrNot(int annee) {
+		boolean bisextile = false;
+		if ((annee % 4) == 0 && (annee % 100) != 0 || (annee % 400) == 0 ) {
+			bisextile = true;
+		}
+		return bisextile;
+	}
+	
 
 
 }
