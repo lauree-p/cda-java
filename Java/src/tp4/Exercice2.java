@@ -1,6 +1,6 @@
 package tp4;
 
-import tp3.Clavier;
+import outils.Clavier;
 
 /**
  * 

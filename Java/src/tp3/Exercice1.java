@@ -1,5 +1,7 @@
 package tp3;
 
+import outils.Clavier;
+
 public class Exercice1 {
 	
 	/**

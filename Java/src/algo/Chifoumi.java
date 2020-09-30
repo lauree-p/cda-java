@@ -1,6 +1,6 @@
 package algo;
 
-import tp3.Clavier;
+import outils.Clavier;
 
 /**
  * Pour commencer les joueurs comptent jusqu’à trois en mettant la main dans le dos.
@@ -21,12 +21,10 @@ import tp3.Clavier;
 public class Chifoumi {
 
 	public static void main(String[] args) {
+		
 		int joueurTour = 0;
 		
 		
-		System.out.println("--------------------------------------------------");
-		System.out.println("*********************CHIFOUMI*********************");
-		System.out.println("---------------------2 Joueurs--------------------");
 		
 
 				 
@@ -100,5 +98,17 @@ public class Chifoumi {
 		}
 		
 		j = 2;
+	}
+	
+	public static int gameMode() {
+		System.out.println("Choisissez un mode de jeu");
+		int gameMode = Clavier.lireInt();
+		return gameMode;
+	}
+	
+	public static void titleGame() {
+		System.out.println("--------------------------------------------------");
+		System.out.println("*********************CHIFOUMI*********************");
+		System.out.println("--------------------------------------------------");
 	}
 }
