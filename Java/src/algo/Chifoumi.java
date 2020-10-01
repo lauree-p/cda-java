@@ -66,6 +66,20 @@ public class Chifoumi {
 	
 	}
 	
+	/**
+	 * Condition of victory
+	 */
+	public static void conditionVictory() {
+		
+	}
+	
+	/**
+	 * Print the winner
+	 */
+	public static void printWinner() {
+		
+	}
+	
 //	/**
 //	 * Start the game
 //	 * @param gameMode 1 or 2
