@@ -5,6 +5,7 @@ public class MainRobot {
 	public static void main(String[] args) {
 		
 		Robot dante = new Robot();
+		
 		dante.status = "explorant";
 		dante.speed = 2;
 		dante.temperature = 510;

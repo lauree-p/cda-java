@@ -1,6 +1,6 @@
 package objet;
 
-public class MainClass {
+public class MainCat {
 
 	public static void main(String[] args) {
 		Cat myCat1 = new Cat();
