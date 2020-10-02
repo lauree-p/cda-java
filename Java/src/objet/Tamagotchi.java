@@ -5,11 +5,12 @@ package objet;
  * @author LAU.POUSSIN
  * 
  * Réaliser un Tamagotchi
-	- caractéristique : couleur
-	- caractéristique : santé, ex : s'il fume sa santé diminue, et sa faim augmente.
-	- caractéristique : taille ( en cm ou en mètre )
-	- caractéristique : espérance de vie
-	- caractéristique : Nom
+	caractéristique : couleur
+	caractéristique : santé, ex : s'il fume sa santé diminue, et sa faim augmente.
+	caractéristique : taille ( en cm ou en mètre )
+	caractéristique : espérance de vie
+	caractéristique : Nom
+	caractéristique : masqué ou non
 	
 	- action : manger
 	- action : aller au toilette
@@ -22,16 +23,25 @@ package objet;
 	- action : mourir
 	- action : il peut enlever le masque ( caractéristique : masqué ou non )
 	- action : se laver	
-	- action : Choisir un type ( Tamagotchi de type chien / Chat ... Dragon ) à la création
+	action : Choisir un type ( Tamagotchi de type chien / Chat ... Dragon ) à la création 
  */
 public class Tamagotchi {
 	
 	private String type;
 	private String name;
 	private String color;
-	private int health;
+	private int health = 100;
 	private double size;
-	private int timeLife;
+	private int dayLife = 365;
+	private boolean mask;
+	
+	private int hungry;
+	private int thristy;
+	private int weight;
+	
+	private String humeur;
+	private int hygiene;
+	private int fatigue;
 	
 	
 	
@@ -45,14 +55,18 @@ public class Tamagotchi {
 	 * @param size
 	 * @param timeLife
 	 */
-	public Tamagotchi(String type, String name, String color, int health, double size, int timeLife) {
+	public Tamagotchi(String type, String name, String color, int health, double size, int dayLife, boolean mask, int hungry, int thirsty, int weight ) {
 		super();
 		this.type = type;
 		this.name = name;
 		this.color = color;
 		this.health = health;
 		this.size = size;
-		this.timeLife = timeLife;
+		this.dayLife = dayLife;
+		this.mask = mask;
+		this.hungry = hungry;
+		this.thristy = thirsty;
+		this.weight = weight;
 	}
 	
 	public Tamagotchi() {
@@ -107,18 +121,6 @@ public class Tamagotchi {
 	public void setSize(double size) {
 		this.size = size;
 	}
-	/**
-	 * @return the timeLife
-	 */
-	public int getTimeLife() {
-		return timeLife;
-	}
-	/**
-	 * @param timeLife the timeLife to set
-	 */
-	public void setTimeLife(int timeLife) {
-		this.timeLife = timeLife;
-	}
 
 	/**
 	 * @return the type
@@ -134,13 +136,90 @@ public class Tamagotchi {
 		this.type = type;
 	}
 	
-	@Override
-	public String toString() {
-		return "Tamagotchi [type=" + type + ", name=" + name + ", color=" + color + ", health=" + health + ", size="
-				+ size + ", timeLife=" + timeLife + "]";
+	/**
+	 * @return the mask
+	 */
+	public boolean isMask() {
+		return mask;
+	}
+
+	/**
+	 * @param mask the mask to set
+	 */
+	public void setMask(boolean mask) {
+		this.mask = mask;
+	}
+	
+	/**
+	 * @return the dayLife
+	 */
+	public int getDayLife() {
+		return dayLife;
+	}
+
+	/**
+	 * @param dayLife the dayLife to set
+	 */
+	public void setDayLife(int dayLife) {
+		this.dayLife = dayLife;
+	}
+
+
+	/**
+	 * @return the hungry
+	 */
+	public int getHungry() {
+		return hungry;
+	}
+
+	/**
+	 * @param hungry the hungry to set
+	 */
+	public void setHungry(int hungry) {
+		this.hungry = hungry;
+	}
+
+	/**
+	 * @return the thristy
+	 */
+	public int getThristy() {
+		return thristy;
+	}
+
+	/**
+	 * @param thristy the thristy to set
+	 */
+	public void setThristy(int thristy) {
+		this.thristy = thristy;
+	}
+
+	/**
+	 * @return the weight
+	 */
+	public int getWeight() {
+		return weight;
+	}
+
+	/**
+	 * @param weight the weight to set
+	 */
+	public void setWeight(int weight) {
+		this.weight = weight;
 	}
 
 	//-------------------------- FIN Getters and Setters
+	
+	@Override
+	public String toString() {
+		return "Tamagotchi [type=" + type + ", name=" + name + ", color=" + color + ", health=" + health + ", size="
+				+ size + ", dayLife=" + dayLife + "]";
+	}
+	
+	public void manger() {
+		
+	}
+	
+	
 	
 	
 }
