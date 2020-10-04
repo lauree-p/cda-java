@@ -1,255 +1,353 @@
 package algo;
 
+import java.util.Arrays;
+
 import outils.Clavier;
 
-/**
- * La Pierre bat le Ciseau
- * La Feuille bat la Pierre
- * Le Ciseau bat la Feuille
- */
 public class Chifoumi {
 
 	public static void main(String[] args) {
-	 
+		//int choicePlayer;
+		//String strchoicePlayer1;
+		//String strchoicePlayer2;
+		//int intChoicePlayer1;
+		//int intChoicePlayer2;
+		int[][] tableauScoreFinal = new int[3][2];
+		//int numberRound;
+
+		// clearConsole();
 		titleGame();
-		setTimeout(() -> gameMode(), 1000);
-		//clearConsole();
+		setTimeout(() -> gameMode(tableauScoreFinal), 1000);
 	}
-	
+
 	/**
-	 * Results of aswers of Players
-	 * @param choixJoueur1
-	 * @param choixJoueur2
-	 */
-	public static void printChoice(String choixJoueur1,String choixJoueur2) {
-		
-		setTimeout(() -> System.out.print("\n....1"), 1000);
-		setTimeout(() -> System.out.print("....2"), 1000);
-		setTimeout(() -> System.out.println("....3"), 1000);
-		
-		System.out.println("Joueur 1 : "+ choixJoueur1);
-		System.out.println("Joueur 2 : "+ choixJoueur1);
-	}
-	
-	//-------------------------------------------------------- Global Game
-	
-	/**
-	 * Title of the Game
+	 * Title of game
 	 */
 	public static void titleGame() {
 		System.out.println("--------------------------------------------------");
-		System.out.println("*********************CHIFOUMI*********************");
-		System.out.println("--------------------------------------------------"); 
+		System.out.println("                     CHIFOUMI                     ");
+		System.out.println("--------------------------------------------------");
 	}
-	
-	/**
-	 * Allow user to choose the game mode
-	 */
-	public static void gameMode() {
-		boolean verif = false;
-		int gameMode = 0;
-		
-		while (verif == false) {
-			System.out.println("\n-------------Choisissez un mode de jeu------------");
-			System.out.println("1 - Contre l'IA \n2 - 2 Joueurs");
-			gameMode = Clavier.lireInt();
-		}
-		
-		if (gameMode == 1 || gameMode == 2) {
-			verif = true;
-			if (gameMode == 1) {
-				onePlayer();
-			} else {
-				twoPlayers();
-			}
-		}
-	
-	}
-	
-	/**
-	 * Condition of victory
-	 */
-	public static void conditionVictory() {
-		
-	}
-	
-	/**
-	 * Print the winner
-	 */
-	public static void printWinner() {
-		
-	}
-	
-//	/**
-//	 * Start the game
-//	 * @param gameMode 1 or 2
-//	 */
-//	public static void startGame(int gameMode) {
-//
-//	}
-	
-	//-------------------------------------------------------- Contre l'IA
-	
-	/**
-	 * One Player vs AI
-	 */
-	public static void onePlayer() {
-		demandeChoixContreIA(1);
-	}
-	
-	/**
-	 * Ask the anwser of the player 
-	 * @param PlayerTurn
-	 */
-	public static void demandeChoixContreIA(int playerTurn) {
-		int choicePlayer = 0;
-		String choicePlayer1;
-		String choicePlayer2;
-		int j = 1;
-		
-		while ((choicePlayer != 1) && (choicePlayer != 2) && (choicePlayer !=3)) {
-			
-			System.out.println("Joueur" + j +" : saisissez un nombre");
-			System.out.println("1 : Pierre\n2 : Feuille\n3 : Ciseau");
-			choicePlayer = Clavier.lireInt();
-		} 
-		
-		switch (choicePlayer) {
-		case 1 : 
-			System.out.println("1");
-			if (playerTurn == 1) {
-				choicePlayer1 = "Pierre";
-			} else {
-				choicePlayer2 = "Pierre";
-			}
-			break;
-		case 2  : 
-			System.out.println("2");
-			if (playerTurn == 1) {
-				choicePlayer1 = "Feuille";
-			} else {
-				choicePlayer2 = "Feuille";
-			}
-			break;
-		case 3  : 
-			System.out.println("3");
-			if (playerTurn == 1) {
-				choicePlayer1 = "Ciseaux";
-			} else {
-				choicePlayer2 = "Ciseaux";
-			}
-			break;
-		default : 
-			System.out.println("Saisissez 1, 2 ou 3");
-			break;
-		}
-		
-		j = 2;
-	}	
-	
-	//-------------------------------------------------------- 2 Joueurs
-	
-	/**
-	 * Mode 2 Players
-	 */
-	public static void twoPlayers() {
-		demandeChoix2Joueurs(1);
-	}
-	
-	/**
-	 * Ask the anwser of the player 
-	 * @param PlayerTurn
-	 */
-	public static void demandeChoix2Joueurs(int playerTurn) {
-		int choicePlayer = 0;
-		String choicePlayer1;
-		String choicePlayer2;
-		int j = 1;
-		
-		while ((choicePlayer != 1) && (choicePlayer != 2) && (choicePlayer !=3)) {
-			
-			System.out.println("Joueur" + j +" : saisissez un nombre");
-			System.out.println("1 : Pierre\n2 : Feuille\n3 : Ciseau");
-			choicePlayer = Clavier.lireInt();
-		} 
-		
-		choiceNumberToString(choicePlayer,playerTurn);
-		
-	}
-	
-	/**
-	 * Transform number choices to String 
-	 * "Pierre","Papier","Ciseaux"
-	 * @param choicePlayer 
-	 * @param playerTurn 
-	 */
-	public static void choiceNumberToString(int choicePlayer, int playerTurn){
-		
-		String[] tabChoix = {"Pierre","Feuille","Ciseaux"};
-		
-		String choicePlayerStr;
-		
-		switch (choicePlayer) {
-		case 1 : 
-			System.out.println("1");
-			choicePlayerStr = tabChoix[1];
-			break;
-		case 2  : 
-			System.out.println("2");
-			choicePlayerStr = tabChoix[2];
-			break;
-		case 3  : 
-			System.out.println("3");
-			choicePlayerStr = tabChoix[3];
-			break;
-		default : 
-			System.out.println("Saisissez 1, 2 ou 3");
-			break;
-		}
-		
-//		if (playerTurn == 1 ) {
-//			choicePlayer1 =  
-//		}
 
-	}
-	
-	 
-	
 	/**
-	 * Switch turn of Player
+	 * Title of game mode 1 player vs IA
 	 */
-	public static void turnOfPlayer() {
+	public static void titleMode1() {
+		System.out.println("\n                  1 Joueur VS IA                \n");
+	}
+
+	/**
+	 * Title of game mode 2 players
+	 */
+	public static void titleMode2() {
+		System.out.println("\n                     2 Joueurs                   \n");
+	}
+
+	/**
+	 * Allow user to choose the game mode or quit the game
+	 */
+	public static void gameMode(int[][] tableauScoreFinal) {
+		int gameMode = 0;
+
+		System.out.println("\n------------ Choisissez un mode de jeu -----------");
+		System.out.println("\n(1) - Contre l'IA \n(2) - 2 Joueurs\n(3) - Quitter\n");
+		gameMode = Clavier.lireInt();
+
+		switch (gameMode) {
+		case 1:
+			// clearConsole();
+			titleGame();
+			titleMode1();
+			round(gameMode,null,null,0,0,1, tableauScoreFinal);
+			demandeChoix(gameMode, null, null, 0, 0, 1 , tableauScoreFinal);
+			break;
+		case 2:
+			// clearConsole();
+			titleGame();
+			titleMode2();
+			round(gameMode,null,null,0,0,1, tableauScoreFinal);
+			demandeChoix(gameMode, null, null, 0, 0, 1, tableauScoreFinal);
+			break;
+		case 3:
+			System.exit(0);
+			break;
+		default:
+			System.out.println("Saisissez 1, 2 ou 3");
+			gameMode(tableauScoreFinal);
+			break;
+		}
+	}
+
+	/**
+	 * Condition of victory 1 3 2 1 3 2 La Pierre bat le Ciseau, La Feuille bat la
+	 * Pierre, Le Ciseau bat la Feuille
+	 */
+	public static void winnerRound(int gameMode, String strchoicePlayer1, String strchoicePlayer2,
+			int intChoicePlayer1, int intChoicePlayer2,int[][]tableauScoreFinal, int numberRound) {
+		
+		if (strchoicePlayer1 == strchoicePlayer2) {
+			System.out.println("******************** EGALITE ! *******************"); //
+			tableauScoreFinal[numberRound-1][0]++;
+			tableauScoreFinal[numberRound-1][1]++;
+		} else if (strchoicePlayer1 == "Feuille") {
+
+			if (strchoicePlayer2 == "Pierre") {
+				System.out.println("*************** VICTOIRE Joueur 1 ***************");
+				tableauScoreFinal[numberRound-1][0]++;
+			} else {
+				if (gameMode == 1) {
+					System.out.println("***************** VICTOIRE de l'IA ***************");
+				} else {
+					System.out.println("**************** VICTOIRE Joueur 2 **************");
+				}
+				tableauScoreFinal[numberRound-1][1]++;
+			}
+
+		} else if (strchoicePlayer1 == "Ciseaux") {
+
+			if (strchoicePlayer2 == "Feuille") {
+				System.out.println("*************** VICTOIRE Joueur 1 ***************");
+				tableauScoreFinal[numberRound-1][0]++;
+			} else {
+				if (gameMode == 1) {
+					System.out.println("***************** VICTOIRE de l'IA ***************");
+				} else {
+					System.out.println("**************** VICTOIRE Joueur 2 **************");
+				}
+				tableauScoreFinal[numberRound-1][1]++;
+			}
+
+		} else if (strchoicePlayer1 == "Pierre") {
+
+			if (strchoicePlayer2 == "Ciseaux") {
+				System.out.println("*************** VICTOIRE Joueur 1 ***************");
+				tableauScoreFinal[numberRound-1][0]++;
+			} else {
+				if (gameMode == 1) {
+					System.out.println("***************** VICTOIRE de l'IA ***************");
+				} else {
+					System.out.println("**************** VICTOIRE Joueur 2 **************");
+				}
+				tableauScoreFinal[numberRound-1][1]++;
+			}
+		}
 		
 	}
 	
-	
-	//--------------------------------------------------------- Utils Functions 
+	/**
+	 * 
+	 * @param tableauScoreFinal
+	 * @param gameMode
+	 */
+	public static void printWinnerOfGame(int[][] tableauScoreFinal, int gameMode) {
+		int scoreJoueur1 = 0;
+		int scoreJoueur2 = 0;
+		
+		for (int i=0; i < tableauScoreFinal.length ; i++) {
+			scoreJoueur1 += tableauScoreFinal[i][0];
+			scoreJoueur2 += tableauScoreFinal[i][1];
+		}
+		
+		if (gameMode == 1) {
+			if (scoreJoueur1 < scoreJoueur2) {
+				System.out.println("\nL'IA GAGNE LA PARTIE\n");
+				System.out.println("Score IA : "+scoreJoueur2);
+				System.out.println("Score Joueur 1 : "+scoreJoueur1);
+			}
+			else {
+				System.out.println("\nJoueur 1 GAGNE LA PARTIE\n");
+				System.out.println("Score Joueur 1 : "+scoreJoueur1);
+				System.out.println("Score IA  : "+scoreJoueur2);
+			}
+		} else if (scoreJoueur1 > scoreJoueur2) {
+			System.out.println("\nJoueur 1 GAGNE LA PARTIE\n");
+			System.out.println("Score Joueur 1 : "+scoreJoueur1);
+			System.out.println("Score Joueur 2 : "+scoreJoueur2);
+		} else {
+			System.out.println("\nJoueur 2 GAGNE LA PARTIE\n");
+			System.out.println("Score Joueur 2 : "+scoreJoueur2);
+			System.out.println("Score Joueur 1 : "+scoreJoueur1);
+		}
+		
+	}
 	
 	/**
-	 * SetTimeOut
+	 * Print the winner results of choices and winner
+	 */
+	public static void printChoice(int gameMode, String strchoicePlayer1, String strchoicePlayer2,
+			int intChoicePlayer1, int intChoicePlayer2, int numberRound , int[][]tableauScoreFinal) {
+
+		System.out.print("\n....3");
+		wait(1000);
+		System.out.print("....2");
+		wait(1000);
+		System.out.println("....1");
+		wait(1000);
+
+		if (gameMode == 1) {
+			System.out.println("\n    Joueur 1 : " + strchoicePlayer1);
+			System.out.println("L'ordinateur : " + strchoicePlayer2 + "\n");
+		} else {
+			System.out.println("Joueur 1 : " + strchoicePlayer1);
+			System.out.println("Joueur 2 : " + strchoicePlayer2 + "\n");
+		}
+
+		winnerRound(gameMode, strchoicePlayer1, strchoicePlayer2, intChoicePlayer1, intChoicePlayer2, tableauScoreFinal, numberRound);
+		numberRound++;
+		round(gameMode, strchoicePlayer1, strchoicePlayer2, intChoicePlayer1, intChoicePlayer2, numberRound, tableauScoreFinal);
+	}
+
+	/**
+	 * Allow the user to replay or quit my game
+	 */
+	public static void endMessage(int numberRound, int[][] tableauScoreFinal, int gameMode) {
+		printWinnerOfGame(tableauScoreFinal, gameMode);
+		numberRound = 0;
+		System.out.println("\n(1) Rejouer                           (2) Quitter");
+		int finalChoice = Clavier.lireInt();
+
+		switch (finalChoice) {
+		case 1:
+			gameMode(tableauScoreFinal);
+			break;
+		case 2:
+			System.exit(0);
+			break;
+		default:
+			System.out.println("Saisissez 1 ou 2");
+			endMessage(numberRound, tableauScoreFinal, gameMode);
+			break;
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	public static void round(int gameMode, String strchoicePlayer1, String strchoicePlayer2,
+			int intChoicePlayer1, int intChoicePlayer2, int numberRound, int[][]tableauScoreFinal) {
+		
+		if (numberRound < 4) {
+			System.out.println("\n--------------------- Manche "+numberRound+" -------------------\n");
+			demandeChoix(gameMode,strchoicePlayer1,strchoicePlayer2,intChoicePlayer1,intChoicePlayer2, numberRound, tableauScoreFinal);
+		} else {
+			endMessage(numberRound, tableauScoreFinal, gameMode);
+		}
+	}
+
+	/**
+	 * Ask the anwser of players and IA and convert in String
+	 * 
+	 * @param PlayerTurn
+	 */
+	public static void demandeChoix(int gameMode, String strchoicePlayer1, String strchoicePlayer2,
+			int intChoicePlayer1, int intChoicePlayer2, int numberRound, int[][]tableauScoreFinal) {
+		int choicePlayer = 0;
+		strchoicePlayer1 = "";
+		strchoicePlayer2 = "";
+		intChoicePlayer1 = 0;
+		intChoicePlayer2 = 0;
+
+		int playerTurn = 1;
+
+		while ((choicePlayer != 1 && choicePlayer != 2 && choicePlayer != 3) || strchoicePlayer2 == "") {
+
+			if (strchoicePlayer1 == "") {
+				playerTurn = 1;
+			} else if (strchoicePlayer1 != "" && strchoicePlayer2 == "") {
+				playerTurn = 2;
+			}
+
+			if (playerTurn == 2 && gameMode == 1) {
+				choicePlayer = (int) (Math.random() * 3 + 1);
+			} else {
+				System.out.println("Joueur " + playerTurn + " : saisissez un nombre");
+				System.out.println("(1) : Pierre\n(2) : Feuille\n(3) : Ciseaux\n");
+				choicePlayer = Clavier.lireInt();
+			}
+
+			switch (choicePlayer) {
+			case 1:
+				if ((playerTurn == 1 && gameMode == 1) || (playerTurn == 1 && gameMode == 2)) {
+					strchoicePlayer1 = "Pierre";
+				} else if (playerTurn == 2 && gameMode == 2) {
+					strchoicePlayer2 = "Pierre";
+				} else if (playerTurn == 2 && gameMode == 1) {
+					strchoicePlayer2 = "Pierre";
+				}
+				break;
+			case 2:
+				if ((playerTurn == 1 && gameMode == 1) || (playerTurn == 1 && gameMode == 2)) {
+					strchoicePlayer1 = "Feuille";
+				} else if (playerTurn == 2 && gameMode == 2) {
+					strchoicePlayer2 = "Feuille";
+				} else if (playerTurn == 2 && gameMode == 1) {
+					strchoicePlayer2 = "Feuille";
+				}
+				break;
+			case 3:
+				if ((playerTurn == 1 && gameMode == 1) || (playerTurn == 1 && gameMode == 2)) {
+					strchoicePlayer1 = "Ciseaux";
+				} else if (playerTurn == 2 && gameMode == 2) {
+					strchoicePlayer2 = "Ciseaux";
+				} else if (playerTurn == 2 && gameMode == 1) {
+					strchoicePlayer2 = "Ciseaux";
+				}
+				break;
+			default:
+				System.out.println("\nSaisissez 1, 2 ou 3\n");
+				break;
+			}
+
+		}
+
+		printChoice(gameMode, strchoicePlayer1, strchoicePlayer2, intChoicePlayer1, intChoicePlayer2, numberRound, tableauScoreFinal);
+	
+	}
+
+	/**
+	 * ----------------- utils -----------------
+	 */
+
+	/**
+	 * SetTimeOut function
+	 *
 	 * @param runnable
 	 * @param delay
 	 */
-	public static void setTimeout(Runnable runnable, int delay){
-	    new Thread(() -> {
-	        try {
-	            Thread.sleep(delay);
-	            runnable.run();
-	        }
-	        catch (Exception e){
-	            System.err.println(e);
-	        }
-	    }).start();
+	public static void setTimeout(Runnable runnable, int delay) {
+		new Thread(() -> {
+			try {
+				Thread.sleep(delay);
+				runnable.run();
+			} catch (Exception e) {
+				System.err.println(e);
+			}
+		}).start();
 	}
-	
+
+	/*
+	 * SetTimeOut the next instruction
+	 * 
+	 * @param delay int (time in millisecond)
+	 */
+	public static void wait(int delay) {
+
+		try {
+			Thread.sleep(delay);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
 	/*
 	 * Clear console
 	 */
 	public static void clearConsole() {
-		for (int i = 0 ; i < 50 ; i++) {
+		for (int i = 0; i < 50; i++) {
 			System.out.println("\n");
 		}
 	}
-
 
 }

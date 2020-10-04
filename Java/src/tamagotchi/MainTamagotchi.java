@@ -1,4 +1,4 @@
-package objet;
+package tamagotchi;
 
 import outils.Clavier;
 
@@ -56,17 +56,12 @@ public class MainTamagotchi {
 		int intType = 0;
 		String typeStr = null;
 		boolean correctChoice = true;
-		// System.out.println(test);
-		// String bomb = new StringBuilder().appendCodePoint(0x1F4A3).toString();
-		// String test2 = "&#9973";
-		// String original = new String("A" + "\u1f42d" + "\u00f1" + "\u00fc" + "C");
-		// System.out.println((char)0x270B);
+		
 		do {
 
 			if (!correctChoice && typeStr == null) {
 				System.out.println("\n--------------------------------------------------------\n");
 				System.out.println("Erreur : Saisissez 1,2,3,4 ou 5");
-				System.out.println("\n--------------------------------------------------------\n");
 			}
 
 			menuType();
@@ -109,7 +104,7 @@ public class MainTamagotchi {
 	 */
 	public static void menuName(String type) {
 		System.out.println("\n--------------------------------------------------------\n");
-		System.out.println("> Donnez un nom Ã  votre " + type + " :");
+		System.out.println("> Donnez un nom à votre " + type + " :");
 		System.out.println("\n--------------------------------------------------------\n");
 	}
 
