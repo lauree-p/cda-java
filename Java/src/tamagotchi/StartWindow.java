@@ -22,9 +22,6 @@ public class StartWindow extends JWindow {
 		setLocationRelativeTo(null);
 		setLayout(new FlowLayout());
 		setBackground(Color.white);
-	}
-	
-	public void img() {
 		// URL de l'image
 		String imgUrl = "images/start.png";
 		ImageIcon icone = new ImageIcon(imgUrl);
@@ -36,11 +33,10 @@ public class StartWindow extends JWindow {
 	public void close() {
 		try {
 			Thread.sleep(3000);
-			img();
+			setVisible(false);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		setVisible(false);// On la rend visible
 	}
 
 }
