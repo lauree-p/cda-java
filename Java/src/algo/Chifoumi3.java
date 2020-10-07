@@ -2,19 +2,27 @@ package algo;
 
 import outils.Clavier;
 
-/**
- * Chifoumi
- * @author Laurélenne
- *
- */
-public class Chifoumi {
-
+public class Chifoumi3 {
+	
+	static int[][] tableauScoreFinal = new int[3][2];
+	static int gameMode;
+	static String strchoicePlayer1;
+	static String strchoicePlayer2;
+	static int intChoicePlayer1;
+	static int intChoicePlayer2;
+	static int numberRound = 1;
+	
 	public static void main(String[] args) {
-		int[][] tableauScoreFinal = new int[3][2];
-
+//		int[][] tableauScoreFinal = new int[3][2];
+//		int gameMode;
+//		String strchoicePlayer1;
+//		String strchoicePlayer2;
+//		int intChoicePlayer1;
+//		int intChoicePlayer2;
+//		int numberRound;
 		clearConsole();
 		titleGame();
-		setTimeout(() -> gameMode(tableauScoreFinal), 1000);
+		setTimeout(() -> gameMode(), 1000);
 	}
 
 	/**
@@ -44,12 +52,11 @@ public class Chifoumi {
 	public static void titleMode2() {
 		System.out.println("\n                     2 Joueurs                   \n");
 	}
-	
+
 	/**
 	 * Allow user to choose the game mode or quit the game
-	 * @param tableauScoreFinal
 	 */
-	public static void gameMode(int[][] tableauScoreFinal) {
+	public static void gameMode() {
 		int gameMode = 0;
 
 		System.out.println("\n------------ Choisissez un mode de jeu -----------");
@@ -61,38 +68,31 @@ public class Chifoumi {
 			clearConsole();
 			titleGame();
 			titleMode1();
-			round(gameMode, null, null, 0, 0, 1, tableauScoreFinal);
-			demandeChoix(gameMode, null, null, 0, 0, 1, tableauScoreFinal);
+			round();
+			clearConsole();
+			demandeChoix();
 			break;
 		case 2:
-			clearConsole();
 			titleGame();
 			titleMode2();
-			round(gameMode, null, null, 0, 0, 1, tableauScoreFinal);
-			demandeChoix(gameMode, null, null, 0, 0, 1, tableauScoreFinal);
+			round();
+			demandeChoix();
 			break;
 		case 3:
 			System.exit(0);
 			break;
 		default:
 			System.out.println("Saisissez 1, 2 ou 3");
-			gameMode(tableauScoreFinal);
+			gameMode();
 			break;
 		}
 	}
-	
+
 	/**
-	 * Print winner of the round
-	 * @param gameMode
-	 * @param strchoicePlayer1
-	 * @param strchoicePlayer2
-	 * @param intChoicePlayer1
-	 * @param intChoicePlayer2
-	 * @param tableauScoreFinal
-	 * @param numberRound
+	 * Condition of victory 1 3 2 1 3 2 La Pierre bat le Ciseau, La Feuille bat la
+	 * Pierre, Le Ciseau bat la Feuille
 	 */
-	public static void winnerRound(int gameMode, String strchoicePlayer1, String strchoicePlayer2, int intChoicePlayer1,
-			int intChoicePlayer2, int[][] tableauScoreFinal, int numberRound) {
+	public static void winnerRound() {
 
 		if (strchoicePlayer1 == strchoicePlayer2) {
 			System.out.println("******************** EGALITE ! *******************"); //
@@ -144,11 +144,11 @@ public class Chifoumi {
 	}
 
 	/**
-	 * Print the winner and score of the game
+	 * 
 	 * @param tableauScoreFinal
 	 * @param gameMode
 	 */
-	public static void printWinnerOfGame(int[][] tableauScoreFinal, int gameMode) {
+	public static void printWinnerOfGame() {
 		int scoreJoueur1 = 0;
 		int scoreJoueur2 = 0;
 
@@ -180,18 +180,11 @@ public class Chifoumi {
 	}
 
 	/**
-	 * Print the winner of round
-	 * @param gameMode
-	 * @param strchoicePlayer1
-	 * @param strchoicePlayer2
-	 * @param intChoicePlayer1
-	 * @param intChoicePlayer2
-	 * @param numberRound
-	 * @param tableauScoreFinal
+	 * Print the winner results of choices and winner
 	 */
-	public static void printChoice(int gameMode, String strchoicePlayer1, String strchoicePlayer2, int intChoicePlayer1,
-			int intChoicePlayer2, int numberRound, int[][] tableauScoreFinal) {
+	public static void printChoice() {
 		clearConsole();
+		titleGame();
 		System.out.print("\n....3");
 		wait(1000);
 		System.out.print("....2");
@@ -201,31 +194,26 @@ public class Chifoumi {
 
 		if (gameMode == 1) {
 			System.out.println("\nJoueur 1 : " + strchoicePlayer1);
-			printGoodDrawLeft(gameMode, strchoicePlayer1, strchoicePlayer2);
+			printGoodDrawLeft();
 			System.out.println("\n                            L'ordinateur : " + strchoicePlayer2 + "\n");
-			printGoodDrawRight(gameMode, strchoicePlayer1, strchoicePlayer2);
+			printGoodDrawRight();
 		} else {
 			System.out.println("Joueur 1 : " + strchoicePlayer1);
-			printGoodDrawLeft(gameMode, strchoicePlayer1, strchoicePlayer2);
-			System.out.println("\n                                 Joueur 2 : " + strchoicePlayer2 + "\n");
-			printGoodDrawRight(gameMode, strchoicePlayer1, strchoicePlayer2);
+			printGoodDrawLeft();
+			System.out.println("Joueur 2 : " + strchoicePlayer2 + "\n");
+			printGoodDrawRight();
 		}
 
-		winnerRound(gameMode, strchoicePlayer1, strchoicePlayer2, intChoicePlayer1, intChoicePlayer2, tableauScoreFinal,
-				numberRound);
+		winnerRound();
 		numberRound++;
-		round(gameMode, strchoicePlayer1, strchoicePlayer2, intChoicePlayer1, intChoicePlayer2, numberRound,
-				tableauScoreFinal);
+		round();
 	}
-	
+
 	/**
 	 * Allow the user to replay or quit my game
-	 * @param numberRound
-	 * @param tableauScoreFinal
-	 * @param gameMode
 	 */
 	public static void endMessage(int numberRound, int[][] tableauScoreFinal, int gameMode) {
-		printWinnerOfGame(tableauScoreFinal, gameMode);
+		printWinnerOfGame();
 		numberRound = 0;
 		System.out.println("\n(1) Rejouer                           (2) Quitter");
 		int finalChoice = Clavier.lireInt();
@@ -233,7 +221,7 @@ public class Chifoumi {
 		titleGame();
 		switch (finalChoice) {
 		case 1:
-			gameMode(tableauScoreFinal);
+			gameMode();
 			break;
 		case 2:
 			System.exit(0);
@@ -246,40 +234,24 @@ public class Chifoumi {
 	}
 
 	/**
-	 * Print the round number if ins't finish or finish and print score
-	 * @param gameMode
-	 * @param strchoicePlayer1
-	 * @param strchoicePlayer2
-	 * @param intChoicePlayer1
-	 * @param intChoicePlayer2
-	 * @param numberRound
-	 * @param tableauScoreFinal
+	 * 
 	 */
-	public static void round(int gameMode, String strchoicePlayer1, String strchoicePlayer2, int intChoicePlayer1,
-			int intChoicePlayer2, int numberRound, int[][] tableauScoreFinal) {
+	public static void round() {
 
 		if (numberRound < 4) {
 			System.out.println("\n--------------------- Manche " + numberRound + " -------------------\n");
-			demandeChoix(gameMode, strchoicePlayer1, strchoicePlayer2, intChoicePlayer1, intChoicePlayer2, numberRound,
-					tableauScoreFinal);
+			demandeChoix();
 		} else {
 			endMessage(numberRound, tableauScoreFinal, gameMode);
 		}
 	}
 
-
 	/**
-	 * Ask choices to players 
-	 * @param gameMode
-	 * @param strchoicePlayer1
-	 * @param strchoicePlayer2
-	 * @param intChoicePlayer1
-	 * @param intChoicePlayer2
-	 * @param numberRound
-	 * @param tableauScoreFinal
+	 * Ask the anwser of players and IA and convert in String
+	 * 
+	 * @param PlayerTurn
 	 */
-	public static void demandeChoix(int gameMode, String strchoicePlayer1, String strchoicePlayer2,
-			int intChoicePlayer1, int intChoicePlayer2, int numberRound, int[][] tableauScoreFinal) {
+	public static void demandeChoix() {
 		int choicePlayer = 0;
 		strchoicePlayer1 = "";
 		strchoicePlayer2 = "";
@@ -338,15 +310,11 @@ public class Chifoumi {
 			}
 
 		}
-		
-		printChoice(gameMode, strchoicePlayer1, strchoicePlayer2, intChoicePlayer1, intChoicePlayer2, numberRound,
-				tableauScoreFinal);
+
+		printChoice();
 
 	}
 
-	/**
-	 * Print rock to the left
-	 */
 	public static void printRockLeft() {
 		System.out.println("       _______");
 		System.out.println("  ----'   ____)");
@@ -356,9 +324,6 @@ public class Chifoumi {
 		System.out.println("  ----.__(___)");
 	}
 
-	/**
-	 * Print leaf to the left
-	 */
 	public static void printLeafLeft() {
 		System.out.println("         ________");
 		System.out.println("   -----'    ____)____");
@@ -368,9 +333,6 @@ public class Chifoumi {
 		System.out.println("   -----.__________)");
 	}
 
-	/**
-	 * Print scissors to the left
-	 */
 	public static void printScissorsLeft() {
 		System.out.println("        _______");
 		System.out.println("   ----'   ____)____");
@@ -380,9 +342,6 @@ public class Chifoumi {
 		System.out.println("   ----.__(___)");
 	}
 
-	/**
-	 * Print rock to the right
-	 */
 	public static void printRockRight() {
 		System.out.println("                                   _______       ");
 		System.out.println("                                  (____   '------");
@@ -392,9 +351,6 @@ public class Chifoumi {
 		System.out.println("                                  (___)__.-------\n");
 	}
 
-	/**
-	 * Print leaf to the right
-	 */
 	public static void printLeafRight() {
 		System.out.println("                                    ________     ");
 		System.out.println("                               ____(____    '----");
@@ -404,10 +360,6 @@ public class Chifoumi {
 		System.out.println("                                (__________.-----\n");
 	}
 
-	
-	/**
-	 * Print scissors to the right
-	 */
 	public static void printScissorsRight() {
 		System.out.println("                                   _______       ");
 		System.out.println("                              ____(____   '------");
@@ -417,13 +369,7 @@ public class Chifoumi {
 		System.out.println("                                   (___)__.------\n\n");
 	}
 
-	/**
-	 * Allows to print the right sign on the left side
-	 * @param gameMode
-	 * @param strchoicePlayer1
-	 * @param strchoicePlayer2
-	 */
-	public static void printGoodDrawLeft(int gameMode, String strchoicePlayer1, String strchoicePlayer2) {
+	public static void printGoodDrawLeft() {
 
 		if (strchoicePlayer1 == "Pierre") {
 			printRockLeft();
@@ -433,14 +379,8 @@ public class Chifoumi {
 			printScissorsLeft();
 		}
 	}
-	
-	/**
-	 * Allows to print the right sign on the right side
-	 * @param gameMode
-	 * @param strchoicePlayer1
-	 * @param strchoicePlayer2
-	 */
-	public static void printGoodDrawRight(int gameMode, String strchoicePlayer1, String strchoicePlayer2) {
+
+	public static void printGoodDrawRight() {
 
 		if (strchoicePlayer2 == "Pierre") {
 			printRockRight();
@@ -457,7 +397,8 @@ public class Chifoumi {
 	 */
 
 	/**
-	 * SetTimeOut for function
+	 * SetTimeOut function
+	 *
 	 * @param runnable
 	 * @param delay
 	 */
@@ -471,33 +412,30 @@ public class Chifoumi {
 			}
 		}).start();
 	}
-	
-	/**
-	 * SetTimeOut for the next instruction
-	 * @param delay
+
+	/*
+	 * SetTimeOut the next instruction
+	 * 
+	 * @param delay int (time in millisecond)
 	 */
 	public static void wait(int delay) {
 
 		try {
 			Thread.sleep(delay);
 		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
 
 	/*
-	 * Clear console with println
+	 * Clear console
 	 */
 	public static void clearConsole() {
 		for (int i = 0; i < 50; i++) {
 			System.out.println("\n");
 		}
 	}
-	
-	/**
-	 * J'ai eu un léger souci avec les paramétres ^^ Mais tout fonctionne !
-	 * Je n'ai pas eu le temps de finir ma v2, beaucoup plus propre, alors je préfère vous envoyer la version qui marche !
-	 * Si vous souhaitez la voir je pourrais tout de même vous l'envoyer dès qu'elle sera prête !
-	 */
+
 }
