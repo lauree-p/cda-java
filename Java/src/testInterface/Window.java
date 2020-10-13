@@ -1,4 +1,4 @@
-package tamagotchi;
+package testInterface;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;

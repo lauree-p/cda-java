@@ -1,6 +1,6 @@
 package tamagotchi;
 
-import outils.Clavier;
+import tools.Clavier;
 
 /**
  * 

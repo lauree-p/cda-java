@@ -1,3 +1,4 @@
+package tests;
 import outils.Clavier;
 
 public class trainningReturn {

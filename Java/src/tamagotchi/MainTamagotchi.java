@@ -4,28 +4,40 @@ import outils.Clavier;
 
 public class MainTamagotchi {
 
+	Tamagotchi myTama;
+
 	public static void main(String[] args) throws InterruptedException {
 
 		Tamagotchi myTama = new Tamagotchi();
 
+		// Set type of Tamagotchi
 		clearConsole();
 		menuStart();
 		sleep(1000);
 		clearConsole();
 		menuStart();
 		myTama.setType(choiceType());
-		
+
+		// Set name of Tamagotchi
 		clearConsole();
 		menuStart();
 		menuName(myTama.getType());
 		myTama.setName(choiceName(myTama.getType()));
-		
-		sleep(2000);
-		clearConsole();
+
+//		sleep(2000);
+//		clearConsole();
+//		menuStart();
+//		mainMyTama(myTama.getName());
+//		
+//		drawEgg();
+
+		// Egg Tama
+		moveEgg(myTama);
 		menuStart();
-		mainMyTama(myTama.getName());
-		afficheStat(myTama);
-		menuTama();
+		clearConsole();
+		menuTop();
+		drawCat();
+		menuBot();
 
 	}
 
@@ -44,7 +56,7 @@ public class MainTamagotchi {
 	public static void menuType() {
 		System.out.println("\n--------------------------------------------------------\n");
 		System.out.println("> Choisissez votre type de compagnon :\n");
-		System.out.println("- (1) : Chien\n- (2) : Chat\n- (3) : Poney\n- (4) : Hamster\n- (5) : Souris\n");
+		System.out.println("- (1) : Chien\n- (2) : Chat");
 	}
 
 	/**
@@ -56,7 +68,7 @@ public class MainTamagotchi {
 		int intType = 0;
 		String typeStr = null;
 		boolean correctChoice = true;
-		
+
 		do {
 
 			if (!correctChoice && typeStr == null) {
@@ -74,15 +86,6 @@ public class MainTamagotchi {
 				break;
 			case 2:
 				typeStr = "Chat";
-				break;
-			case 3:
-				typeStr = "Poney";
-				break;
-			case 4:
-				typeStr = "Hamster";
-				break;
-			case 5:
-				typeStr = "Souris";
 				break;
 			default:
 				correctChoice = false;
@@ -187,42 +190,106 @@ public class MainTamagotchi {
 //	    }
 //	}
 
-	public static void menuAction() {
-		System.out.println("- action : manger");
-		System.out.println("- action : aller au toilette");
-		System.out.println("- action : se teindre les cheveux, mais en roux");
-		System.out.println("- action : se reposer");
-		System.out.println("- action : se reproduire");
-		System.out.println("- action : exprimer son humeur ex : sauter de joie");
-		System.out.println("- action : voir des amis");
-		System.out.println("- action : Faire du sport : augmente la sant√©");
-		System.out.println("- action : mourir");
-		System.out.println("- action : il peut enlever le masque ( caract√©ristique : masqu√© ou non )");
-		System.out.println("- action : se laver");
-	}
-	
 	public static void afficheStat(Tamagotchi myTama) {
-		System.out.println("\t\t\t Temps de vie restant : "+myTama.getDayLife()+" jours");
-		System.out.println("Vie : "+ myTama.getHealth());
-		System.out.println("Faim : "+myTama.getHungry());
-		System.out.println("Soif : "+myTama.getThristy());
-		
-		System.out.println("Poids : "+myTama.getWeight()+" kg");
-		System.out.println("Taille : "+myTama.getSize() +" cm");
-		
-		
+		System.out.println("\t\t\t Temps de vie restant : " + myTama.getDayLife() + " jours");
+		System.out.println("Vie : " + myTama.getHealth());
+		System.out.println("Faim : " + myTama.getHungry());
+		System.out.println("Soif : " + myTama.getThristy());
+
+		System.out.println("Poids : " + myTama.getWeight() + " kg");
+		System.out.println("Taille : " + myTama.getSize() + " cm");
 	}
-	
-	public static void menuTama() {
-		System.out.println("\n(1) ACTION\t(2) ACTIVITES\t(3) QUITTER");
-		System.out.println("________________________________________________________");
-	}
-	
+
+
 //	public static void lenghtDecor(String tamaName) {
 //		String str = "--------------------------------------------------------";
 //		System.out.println(str.length());
 //		int nameTamaLenght = tamaName.length();
 //		
 //	}
+
+	public static void drawEgg() {
+		System.out.println("    .''`.");
+		System.out.println("   /   " + "  \\");
+		System.out.println("  :       :");
+		System.out.println("  :       :");
+		System.out.println("   `.___,'");
+	}
+
+	public static void drawEgg2() {
+		System.out.println("   .''`. §");
+		System.out.println("  /   " + "  \\");
+		System.out.println(" :       :");
+		System.out.println(" :       :");
+		System.out.println("§ `.___.'");
+	}
+
+	public static void moveEgg(Tamagotchi myTama) throws InterruptedException {
+
+		for (int i = 0; i < 2; i++) {
+			clearConsole();
+			menuStart();
+			mainMyTama(myTama.getName());
+			drawEgg();
+			sleep(2000);
+			clearConsole();
+			menuStart();
+			mainMyTama(myTama.getName());
+			drawEgg2();
+			sleep(2000);
+			clearConsole();
+			menuStart();
+			mainMyTama(myTama.getName());
+			drawEgg();
+		}
+
+	}
+
+	public static void drawCat() {
+
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@#((((((@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@//(####(/%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#//####(//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@**&@#//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#/*@@@@@@@**&@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@**@@#**@@@@@@@**&@%*/@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@#/*(#**%@@@@@@@@@##**(@@,/%@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@(*/####/**********,&@@@@,*%@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@(**######(#(@@@@@@@@@@@@,*&@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@**((#####(###(@@@@@@@@@@@@@@(*(@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@**(###%  *((@@@@@@@@@, *@@@@(*(@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@&****(######&@@@@. *@@@@@@@@@@@(****@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@/*&@@@@@@@@@,,,,,,,@@@@@@@@@(*(@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@&/*((**/@@@@@@@@@@@@@@@@@@@@@**(((**@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@&((((((/*/******************/#((((((@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@&##(((((((**%@@@@/*(&@@@/*/(((((((#(@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@%%#((((//(##**((/**##(//((((%%&@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@&%%%&(((////(((////((#%%%%@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+
+	}
 	
+	public static void menuTop() {
+		System.out.println("====================================================================");
+		System.out.print("  (1)HUNGER METER   ");
+		System.out.print("  (2)FEEDING TIME   ");
+		System.out.print("  (3)TOILET   ");
+		System.out.println("  (4)PLAYTIME   ");
+		System.out.println("====================================================================");
+
+	}
+	
+	public static void menuBot() {
+		System.out.println("====================================================================");
+		System.out.print("      (5)DISCIPLINE   ");
+		System.out.print("  (6)HEALTH   ");
+		System.out.print("  (7)LIGHTS   ");
+		System.out.println("  (8)NOTEBOOK   ");
+		System.out.println("====================================================================");
+	}
+
 }

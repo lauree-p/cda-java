@@ -1,51 +1,43 @@
+/**
+ * 
+ */
 package tamagotchi;
 
-import java.lang.reflect.InvocationTargetException;
-
-import javax.swing.SwingUtilities;
-
+/**
+ * @author pouss
+ *
+ */
 public class Main {
-	
-	
-	@SuppressWarnings("unused")
-	private static StartWindow startWindow;
-	@SuppressWarnings("unused")
-	private static Window app;
-	
-	public static void main(String[] args) throws InvocationTargetException, InterruptedException {
-			
-		SwingUtilities.invokeAndWait(new Runnable() {
-			
-			@Override
-			public void run() {
-				startWindow = new StartWindow();
-			}
-			
-		});
-		
-	    try {
-	        Thread.sleep(1000);
-	    } catch (InterruptedException e) {
-	        e.printStackTrace();
-	    }
-	    
-	    SwingUtilities.invokeLater(new Runnable() {
-	    	
-	    	@Override
-			public void run() {
-	    		startWindow.close();
-			}
-		});
-	    
-	    SwingUtilities.invokeLater(new Runnable() {
-	    	
-	    	@Override
-			public void run() {
-	    		Window app = new Window();
-			}
-		});
-	    
-	     
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// Initialisation
+		Tamagotchi myTama = new Tamagotchi();
+		Menus menus = new Menus();
+		Utils utils = new Utils();
+		Actions actions = new Actions();
+		// Title 
+		menus.startGame();
+		utils.sleep(1000);
+		// Type
+		menus.type();
+		myTama.chooseType();
+		menus.typeChoosen(myTama);
+		// Sex
+		myTama.randomSexe();
+		menus.sexe(myTama);
+		// Name
+		menus.name(myTama.getType());
+		myTama.chooseName();
+		menus.nameChoosen(myTama);
+		// Loading
+		utils.sleep(1000);
+		menus.loading();
+		// Game
+		menus.game(myTama);
+		actions.chooseAction(myTama);
 	}
 
 }

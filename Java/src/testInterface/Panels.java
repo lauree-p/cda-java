@@ -1,4 +1,4 @@
-package tamagotchi;
+package testInterface;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
