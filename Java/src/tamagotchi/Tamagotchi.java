@@ -1,7 +1,7 @@
 package tamagotchi;
 
 /**
- * 
+ * https://www.tamatalk.com/IB/topic/116745-tamagotchi-original-instruction-manuals/
  * @author LAU.POUSSIN
  * 
  * Réaliser un Tamagotchi
