@@ -3,7 +3,7 @@ package tamagotchi;
 import outils.Clavier;
 
 /**
- * 
+ * https://www.tamatalk.com/IB/topic/116745-tamagotchi-original-instruction-manuals/
  * @author LAU.POUSSIN
  * 
  *         Réaliser un Tamagotchi caractéristique : couleur caractéristique :
