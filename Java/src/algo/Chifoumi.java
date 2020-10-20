@@ -494,10 +494,5 @@ public class Chifoumi {
 			System.out.println("\n");
 		}
 	}
-	
-	/**
-	 * J'ai eu un léger souci avec les paramétres ^^ Mais tout fonctionne !
-	 * Je n'ai pas eu le temps de finir ma v2, beaucoup plus propre, alors je préfère vous envoyer la version qui marche !
-	 * Si vous souhaitez la voir je pourrais tout de même vous l'envoyer dès qu'elle sera prête !
-	 */
+
 }
